@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       
+            function addItem() {
+            var a = document.getElementById("list");
+            var input = document.getElementById("input");
+            var li = document.createElement("li");
+            li.setAttribute('id', input.value);
+            li.appendChild(document.createTextNode(input.value));
+            a.appendChild(li);
+
+           document.getElementById("input").value = "";
+        }
+ 
+       
+        function removeItem() {
+ 
+          
+            var a = document.getElementById("list");
+            var e = document.querySelector("li:last-child");
+            a.removeChild(e);
+            
+            
+        }
+    </script>
+</head>
+<body>
+    <h1>Todo List
+    <input type="text" name="" id="input" placeholder="ENTER">
+    <button onclick="addItem()">add</button>
+    <button onclick="removeItem()"> delete</button>
+    
+    <ul id="list"> </ul></h1>
+</body>
+</html>
